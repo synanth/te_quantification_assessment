@@ -1,0 +1,6 @@
+*.csv
+*.sam
+out/*
+scripts/quant/packages/*
+scripts/longbench/alignment/*
+scripts/slurm/longbench/alignment/*
