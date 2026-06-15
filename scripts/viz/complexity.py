@@ -37,7 +37,7 @@ fig = make_subplots(rows=3, cols=3,
                              [{"secondary_y" : True, "r" : .05}, {"secondary_y" : True, "r" : .05}, {"secondary_y" : True, "r" : .05}],
                              [{"secondary_y" : True, "r" : .05}, {"secondary_y" : True, "r" : .05}, {"secondary_y" : True, "r" : .05}]],
                      horizontal_spacing=0.05)
-fig.update_layout(font_family="Arial", boxmode="group", margin=dict(l=50, r=10, t=80, b=10), showlegend=False)
+fig.update_layout(font_family="Arial", boxmode="group", margin=dict(l=50, r=10, t=60, b=40), showlegend=False)
 
 
 ## name conversion ##
@@ -45,7 +45,7 @@ convert = {"ervmap" : "ERVmap",
            "explorate" : "ExplorATE",
            "lions" : "LIONS",
            "squire" : "SQuIRE",
-           "te-saem" : "TE-SAEM",
+           "te-saem" : "<b>QuantiTE<b>",
            "telescope" : "Telescope",
            "telocal" : "TElocal",
            "tetools" : "TEtools",
@@ -70,19 +70,18 @@ for i, m in enumerate(["ervmap", "explorate", "lions", "squire", "te-saem", "tel
 
     fig.add_annotation(xref="x domain", yref="y domain", x=0.5, y=1.15, showarrow=False, text=convert[m], row=int(i/3)+1, col=(i%3)+1)
 
-fig.add_annotation(xref="paper", yref="paper", x=0.5, y=1.15, showarrow=False, text="Computational complexity at multiple depths", font=dict(size=18))
 fig.add_annotation(xref="paper", yref="paper", x=-0.075, y=.5, showarrow=False, text="GB RAM", font=dict(size=16), textangle=270)
 fig.add_annotation(xref="paper", yref="paper", x=1.0, y=.5, showarrow=False, text="Mins to completion", font=dict(size=16), textangle=270)
 
 
 fig.add_shape(type="rect", xref="paper", yref="paper", x0=.25, x1=.27, y0=1.06, y1=1.08, line=dict(color=colors[1]), fillcolor=colors[1])
-fig.add_annotation(xref="paper", yref="paper", x=.28, y=1.09, showarrow=False, text="Wall clock", font=dict(size=14))
+fig.add_annotation(xref="paper", yref="paper", x=.27, y=1.09, showarrow=False, text="Wall clock", font=dict(size=14))
 
 fig.add_shape(type="rect", xref="paper", yref="paper", x0=.41, x1=.43, y0=1.06, y1=1.08, line=dict(color=colors[2]), fillcolor=colors[2])
 fig.add_annotation(xref="paper", yref="paper", x=.50, y=1.09, showarrow=False, text="CPU clock", font=dict(size=14))
 
 fig.add_shape(type="rect", xref="paper", yref="paper", x0=.57, x1=.59, y0=1.06, y1=1.08, line=dict(color=colors[0]), fillcolor=colors[0])
-fig.add_annotation(xref="paper", yref="paper", x=.63, y=1.09, showarrow=False, text="RAM", font=dict(size=14))
+fig.add_annotation(xref="paper", yref="paper", x=.625, y=1.09, showarrow=False, text="RAM", font=dict(size=14))
 
 
 
@@ -94,6 +93,7 @@ fig.update_yaxes(range=[0, max_cpu], secondary_y=True, showgrid=False, ticks="in
 fig.update_xaxes(showline=True, linewidth=1, linecolor='black', mirror=True)
 fig.update_yaxes(showline=True, linewidth=1, linecolor='black', mirror=True)
 
+fig.add_annotation(xref="paper", yref="paper", x=.5, y=-.07, showarrow=False, text="Coverage", font=dict(size=16))
 
 
 fig.update_layout(plot_bgcolor="#ffffff")

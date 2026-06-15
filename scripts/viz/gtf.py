@@ -22,7 +22,7 @@ convert_name = {"ervmap" : "ERVmap",
                 "explorate" : "ExplorATE",
                 "lions" : "LIONS",
                 "squire" : "SQuIRE",
-                "te-saem" : "TE-SAEM",
+                "te-saem" : "<b>QuantiTE</b>",
                 "telescope" : "Telescope",
                 "telocal" : "TElocal",
                 "tetools" : "TEtools",
@@ -38,7 +38,7 @@ fig = make_subplots(rows=6, cols=3, horizontal_spacing=0.05, vertical_spacing=0.
                              [{"b": .075},{"b" : .075},{"b" : .075}],
                              [{},{},{}],
                              [{"b": .075},{"b" : .075},{"b" : .075}]])
-fig.update_layout(font_family="Arial", boxmode='group', margin=dict(l=20, r=20, t=100, b=20), showlegend=False)
+fig.update_layout(font_family="Arial", boxmode='group', margin=dict(l=20, r=20, t=60, b=20), showlegend=False)
 
 df = df.loc[df["depth"] == "30"].reset_index(drop=True)
 colors = ["#74d7ee", "#ffafc8", "#613915"]
@@ -67,7 +67,6 @@ fig.update_yaxes(title_text="", row=1, col=1)
 
 
 ## legend ##
-fig.add_annotation(xref="paper", yref="paper", x=0.5, y= 1.08, showarrow=False, text="Methods' performances based on annotation files", font=dict(size=18))
 fig.add_annotation(xref="paper", yref="paper", x=-0.05, y= .5, showarrow=False, text="Performance", font=dict(size=16), textangle=270)
 
 fig.add_shape(type="rect", xref="paper", yref="paper", x0=.35, x1=.362, y0=1.035, y1=1.045, line=dict(color=colors[0], width=2), fillcolor=colors[0])

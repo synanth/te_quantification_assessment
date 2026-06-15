@@ -13,7 +13,7 @@ convert = {"ervmap" : "ERVmap",
            "explorate" : "ExplorATE",
            "lions" : "LIONS",
            "squire" : "SQuIRE",
-           "te-saem" : "TE-SAEM",
+           "te-saem" : "<b>QuantiTE</b>",
            "telescope" : "Telescope",
            "telocal" : "TElocal",
            "tetools" : "TEtools",
@@ -149,7 +149,7 @@ for gtf in methods:
 
 
     ## legend ##
-    fig.add_annotation(xref="paper", yref="paper", x=0.5, y=1.09, text="TE families' sensitivity and precision for " + convert[gtf] + "'s GTF at 30X", showarrow=False, font=dict(size=20, weight="bold"))
+#    fig.add_annotation(xref="paper", yref="paper", x=0.5, y=1.09, text="TE families' sensitivity and precision for " + convert[gtf] + "'s GTF at 30X", showarrow=False, font=dict(size=20, weight="bold"))
 
 
     fig.add_shape(type="rect", xref="paper", yref="paper", x0=0.4, x1=0.41, y0=1.04, y1=1.05, line=dict(color=colors[0], width=2), fillcolor=colors[0])
@@ -166,7 +166,7 @@ for gtf in methods:
 
     print(out_loc)
     fig.write_image(height=1200, width=1200, file = out_loc, format="png")
-quit()
+    #fig.write_image(file = out_loc, format="png")
 
 
 
@@ -195,8 +195,8 @@ for x in csv_out:
             val = str(0)
         buff += [val]
     out += [buff + [str(round(avg_s/n_fam,2)), str(round(avg_p/n_fam,2))]]
-out_loc = "/home/stexocae/li_lab/te_sim/out/families.csv"
-
+out_loc = "/home/stexocae/data_xfer/families.csv"
+print(out_loc)
 with open(out_loc, "w") as f:
     for x in out:
         f.write(",".join(x) + "\n")

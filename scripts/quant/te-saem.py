@@ -7,7 +7,7 @@ gtf = sys.argv[2]
 sample = sys.argv[3]
 n_de = sys.argv[4]
 depth = sys.argv[5]
-n_cpu = str(32)
+n_cpu = str(16)
 
 
 working_dir = "/lustre/research/dawli/stexocaelum/TE_quantification_simulation/" + build + "_" + gtf + "_" + n_de + "_" + depth + "/"

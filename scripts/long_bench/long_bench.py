@@ -18,20 +18,19 @@ fc_ids = []
 quant_ids = []
 
 ## map long reads ##
-for lr in long_reads:
-    loc = base_loc + lr + "/" + lr
+#for lr in long_reads:
+#    loc = base_loc + lr + "/" + lr
     
-    map_call = "bash " + slurm_loc + "map_long.sh " + lr
-    map_jobid = subprocess.run(map_call, shell=True, stdout=subprocess.PIPE, encoding='utf-8').stdout.strip().split()[-1]
-    print(map_call)
-    samtools_call = "bash " + slurm_loc + "samtools.sh " + lr + " " + map_jobid
-    samtools_jobid = subprocess.run(samtools_call, shell=True, stdout=subprocess.PIPE, encoding='utf-8').stdout.strip().split()[-1]
-    print(samtools_call)
-    for method in methods:
-        overlap_call = "bash " + slurm_loc + "featurecounts.sh " + lr + " " + method + " " + samtools_jobid
-        fc_ids += [subprocess.run(overlap_call, shell=True, stdout=subprocess.PIPE, encoding='utf-8').stdout.strip().split()[-1]]
+#    map_call = "bash " + slurm_loc + "map_long.sh " + lr
+#    map_jobid = subprocess.run(map_call, shell=True, stdout=subprocess.PIPE, encoding='utf-8').stdout.strip().split()[-1]
+#    print(map_call)
+#    samtools_call = "bash " + slurm_loc + "samtools.sh " + lr + " " + map_jobid
+#    samtools_jobid = subprocess.run(samtools_call, shell=True, stdout=subprocess.PIPE, encoding='utf-8').stdout.strip().split()[-1]
+#    print(samtools_call)
+#    for method in methods:
+#        overlap_call = "bash " + slurm_loc + "featurecounts.sh " + lr + " " + method + " " + samtools_jobid
+#        fc_ids += [subprocess.run(overlap_call, shell=True, stdout=subprocess.PIPE, encoding='utf-8').stdout.strip().split()[-1]]
 
-quit()
 
 ## map short reads ##
 for sr in short_reads:

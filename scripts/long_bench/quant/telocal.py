@@ -19,8 +19,8 @@ telocal_call += "--TE " + te_gtf_loc + " "
 telocal_call += "--project " + out_loc
 
 
-#subprocess.run(mkdir_call, shell=True)
-#subprocess.run(telocal_call, shell=True)
+subprocess.run(mkdir_call, shell=True)
+subprocess.run(telocal_call, shell=True)
 
 ## translate ##
 raw_counts_loc = out_loc + ".cntTable"

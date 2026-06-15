@@ -32,7 +32,7 @@ fig = make_subplots(rows=6, cols=3, horizontal_spacing=0.05, vertical_spacing= 0
                              [{}, {}, {}],
                              [{"b" : .075}, {"b" : .075}, {"b" : .075}]])
 
-fig.update_layout(font_family="Arial", boxmode="group", margin=dict(l=60, r=20, t=100, b=0), showlegend=False)
+fig.update_layout(font_family="Arial", boxmode="group", margin=dict(l=60, r=20, t=60, b=0), showlegend=False)
 
 
 ## name conversion ##
@@ -40,7 +40,7 @@ convert = {"ervmap" : "ERVmap",
            "explorate" : "ExplorATE",
            "lions" : "LIONS",
            "squire" : "SQuIRE",
-           "te-saem" : "TE-SAEM",
+           "te-saem" : "<b>QuantiTE</b>",
            "telescope" : "Telescope",
            "telocal" : "TElocal",
            "tetools" : "TEtools",
@@ -82,18 +82,17 @@ fig.update_yaxes(showline=True, linewidth=1, linecolor='black', mirror=True)
 
 
 ## legend ##
-fig.add_annotation(xref="paper", yref="paper", x=0.5, y=1.11, showarrow=False, text="Method's performances based on read depth", font=dict(size=18))
 fig.add_annotation(xref="paper", yref="paper", x=-0.07, y=.5, showarrow=False, text="Performance", font=dict(size=16), textangle=270)
-fig.add_annotation(xref="paper", yref="paper", x=0.5, y=.01, showarrow=False, text="Depth", font=dict(size=16))
+fig.add_annotation(xref="paper", yref="paper", x=0.5, y=.01, showarrow=False, text="Coverage", font=dict(size=16))
 
 fig.add_shape(type="rect", xref="paper", yref="paper", x0=.34, x1=.352, y0=1.048, y1=1.06, line=dict(color=colors[0], width=2), fillcolor=colors[0])
-fig.add_annotation(xref="paper", yref="paper", x=0.395, y=1.065, showarrow=False, text="Sensitivity", font=dict(size=14))
+fig.add_annotation(xref="paper", yref="paper", x=0.399, y=1.066, showarrow=False, text="Sensitivity", font=dict(size=14))
 
-fig.add_shape(type="rect", xref="paper", yref="paper", x0=.46, x1=.472, y0=1.048, y1=1.06, line=dict(color=colors[1], width=2), fillcolor=colors[1])
-fig.add_annotation(xref="paper", yref="paper", x=0.513, y=1.065, showarrow=False, text="Precision", font=dict(size=14))
+fig.add_shape(type="rect", xref="paper", yref="paper", x0=.463, x1=.475, y0=1.048, y1=1.06, line=dict(color=colors[1], width=2), fillcolor=colors[1])
+fig.add_annotation(xref="paper", yref="paper", x=0.516, y=1.066, showarrow=False, text="Precision", font=dict(size=14))
 
-fig.add_shape(type="rect", xref="paper", yref="paper", x0=.56, x1=.572, y0=1.048, y1=1.06, line=dict(color=colors[2], width=2), fillcolor=colors[2])
-fig.add_annotation(xref="paper", yref="paper", x=0.615, y=1.065, showarrow=False, text="F1-score", font=dict(size=14))
+fig.add_shape(type="rect", xref="paper", yref="paper", x0=.566, x1=.578, y0=1.048, y1=1.06, line=dict(color=colors[2], width=2), fillcolor=colors[2])
+fig.add_annotation(xref="paper", yref="paper", x=0.616, y=1.066, showarrow=False, text="F1-score", font=dict(size=14))
 
 
 ## axis split ##
@@ -112,20 +111,6 @@ fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075
 fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=1, col=3)
 fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=1, col=3)
 
-fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=2, col=1)
-fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=2, col=1)
-fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=2, col=1)
-fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=2, col=1)
-
-fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=2, col=2)
-fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=2, col=2)
-fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=2, col=2)
-fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=2, col=2)
-
-fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=2, col=3)
-fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=2, col=3)
-fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=2, col=3)
-fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=2, col=3)
 
 fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=3, col=1)
 fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=3, col=1)
@@ -141,6 +126,22 @@ fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075
 fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=3, col=3)
 fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=3, col=3)
 fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=3, col=3)
+
+
+fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=5, col=1)
+fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=5, col=1)
+fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=5, col=1)
+fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=5, col=1)
+
+fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=5, col=2)
+fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=5, col=2)
+fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=5, col=2)
+fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=5, col=2)
+
+fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=5, col=3)
+fig.add_shape(type="line", xref="x domain", yref="y domain", x0=-.0075, x1=.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=5, col=3)
+fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.015, y1=.035, line=dict(color="black", width=2), row=5, col=3)
+fig.add_shape(type="line", xref="x domain", yref="y domain", x0=.9975, x1=1.0075, y0=-.055, y1=-.005, line=dict(color="black", width=2), row=5, col=3)
 
 
 

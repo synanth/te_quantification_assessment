@@ -17,7 +17,7 @@ lr_to_sr = {"SRR30947491" : "SRR30947472", "SRR30947492" : "SRR30947473",
             "SRR30947498" : "SRR30947506", "SRR30947499" : "SRR30947507"}
 
 out_csv = [["long_srr", "short_srr", "method", "spearman", "pearson", "mae", "rmse"]]
-out_loc = base_loc + "out.csv"
+out_loc = "/home/stexocae/data_xfer/longbench.csv"
 
 for lr, sr in lr_to_sr.items():
     print(out_csv[0])

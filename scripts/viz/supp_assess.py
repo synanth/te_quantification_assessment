@@ -22,7 +22,7 @@ df[["depth", "te-saem_precision", "te-saem_sensitivity", "te-saem_f1", "telescop
 
 
 ## name conversions ##
-name_conversion = {"te-saem" : "TE-SAEM",
+name_conversion = {"te-saem" : "<b>QuantiTE</b>",
                    "telescope" : "Telescope"}
 
 ## Make plots ##
@@ -66,7 +66,6 @@ fig.add_shape(type="rect", xref="x domain", yref="y domain", x0=0, x1=1, y0=0, y
 
 fig.add_annotation(xref="paper", yref="paper", x=-.07, y=0.5, showarrow=False, text="Preformance", font=dict(size=16), textangle=270)
 fig.add_annotation(xref="paper", yref="paper", x=.5, y=-0.15, showarrow=False, text="Depth", font=dict(size=16))
-fig.add_annotation(xref="paper", yref="paper", x=.5, y=1.3, showarrow=False, text="Comparison between TE-SAEM and Telescope using TE-SAEM's GTF", font=dict(size=20))
 
 fig.add_annotation(xref= "x domain", yref="y domain", x=0.5, y=1.1, showarrow=False, text="Sensitivity", font=dict(size=16), row=1, col=1)
 fig.add_annotation(xref= "x domain", yref="y domain", x=0.5, y=1.1, showarrow=False, text="Precision", font=dict(size=16), row=1, col=2)
@@ -75,11 +74,11 @@ fig.add_annotation(xref= "x domain", yref="y domain", x=0.5, y=1.1, showarrow=Fa
 fig.add_shape(type="line", xref="paper", yref="paper", x0=0.35, x1=.4, y0=1.15, y1=1.15, line=dict(width=2))
 fig.add_shape(type="circle", xref="paper", yref="paper", x0=0.37, x1=.38, y0=1.135, y1=1.165, line=dict(width=2), fillcolor="#000000")
 
-fig.add_annotation(xref="paper", yref="paper", x=.45, y=1.185, text="TE-SAEM", font=dict(size=14), showarrow=False)
+fig.add_annotation(xref="paper", yref="paper", x=.45, y=1.185, text="<b>QuantiTE</b>", font=dict(size=14), showarrow=False)
 
-fig.add_shape(type="line", xref="paper", yref="paper", x0=0.55, x1=.6, y0=1.15, y1=1.15, line=dict(width=2, dash="dot"))
-fig.add_shape(type="circle", xref="paper", yref="paper", x0=0.57, x1=.58, y0=1.135, y1=1.165, line=dict(width=2), fillcolor="#000000")
-fig.add_annotation(xref="paper", yref="paper", x=.65, y=1.185 ,showarrow=False,  text="Telescope", font=dict(size=14))
+fig.add_shape(type="line", xref="paper", yref="paper", x0=0.5, x1=.55, y0=1.15, y1=1.15, line=dict(width=2, dash="dot"))
+fig.add_shape(type="circle", xref="paper", yref="paper", x0=0.52, x1=.53, y0=1.135, y1=1.165, line=dict(width=2), fillcolor="#000000")
+fig.add_annotation(xref="paper", yref="paper", x=.6, y=1.185 ,showarrow=False,  text="Telescope", font=dict(size=14))
 
 
 
@@ -92,4 +91,4 @@ fig.update_layout(plot_bgcolor="#ffffff")
 
 ## write output ##
 ## ^_^ ##
-fig.write_image(height= 450, width= 900, file=viz_loc, format="png")
+fig.write_image(height= 400, width= 900, file=viz_loc, format="png")

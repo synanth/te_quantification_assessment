@@ -7,7 +7,7 @@ sbatch <<EOT
 #SBATCH --partition=nocona
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=36
-#SBATCH --dependency=afterok:$6
+##SBATCH --dependency=afterok:$6
 
 . "/home/stexocae/miniconda3/etc/profile.d/conda.sh"
 conda activate saem
